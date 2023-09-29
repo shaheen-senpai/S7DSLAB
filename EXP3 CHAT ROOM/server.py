@@ -49,8 +49,8 @@ class ChatServer:
 
 
 if __name__ == "__main__":
-    HOST = "127.0.0.1"  # Change this to the server's IP address or domain name
-    PORT = 12345         # Change this to the server's port
+    HOST = "172.18.120.128"  # Change this to the server's IP address or domain name
+    PORT = 1234         # Change this to the server's port
 
     server = ChatServer(HOST, PORT)
     server.run()

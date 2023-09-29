@@ -16,7 +16,7 @@ class ChatClient:
 
     def gui_init(self):
         self.root = tk.Tk()
-        self.root.title("Chat Client")
+        self.root.title(f" Chat Client {self.username} ")
 
         self.chat_history = scrolledtext.ScrolledText(self.root, state='disabled')
         self.chat_history.pack(expand=True, fill='both')
@@ -62,8 +62,8 @@ class ChatClient:
         self.root.mainloop()
 
 if __name__ == "__main__":
-    HOST = "127.0.0.1"  # Change this to the server's IP address or domain name
-    PORT = 12345         # Change this to the server's port
+    HOST = "172.18.120.128"  # Change this to the server's IP address or domain name
+    PORT = 1234         # Change this to the server's port
 
     client = ChatClient(HOST, PORT)
     client.run()
