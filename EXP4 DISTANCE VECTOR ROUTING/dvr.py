@@ -44,6 +44,8 @@ def simulate_network():
     router_a = Router('A')
     router_b = Router('B')
     router_c = Router('C')
+    router_d = Router('D')
+    
 
     router_a.add_neighbor('B', 1)
     router_a.add_neighbor('C', 2)
@@ -51,8 +53,11 @@ def simulate_network():
     router_b.add_neighbor('C', 5)
     router_c.add_neighbor('A', 2)
     router_c.add_neighbor('B', 5)
+    router_c.add_neighbor('D', 4)
+    router_d.add_neighbor('C', 4)
+    
 
-    routers = [router_a, router_b, router_c]
+    routers = [router_a, router_b, router_c, router_d]
     
     print_network_state(routers)
 
