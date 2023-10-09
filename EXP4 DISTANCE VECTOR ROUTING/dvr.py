@@ -1,6 +1,6 @@
-import copy
 
 class Router:
+    
     def __init__(self, name):
         self.name = name
         self.distance_vector = {self.name: 0}
@@ -30,6 +30,15 @@ class Router:
             self.distance_vector[destination] = new_distance
             return True
         return False
+    
+    
+    
+def print_network_state(routers):
+        print("Initial Network State:")
+        for router in routers:
+            print(f"{router.name}: Neighbors - {router.neighbors}")    
+
+
 
 def simulate_network():
     router_a = Router('A')
@@ -44,6 +53,8 @@ def simulate_network():
     router_c.add_neighbor('B', 5)
 
     routers = [router_a, router_b, router_c]
+    
+    print_network_state(routers)
 
     for _ in range(5):
         print("\n---- Simulation Step ----")
@@ -60,7 +71,7 @@ def simulate_network():
             print(f"{router.name}: {router.distance_vector}")
 
         if not updated_routers:
-            print("Convergence reached. No updates in this iteration.")
+            print("\n Convergence reached. No updates in this iteration. \n")
             break
 
 simulate_network()
